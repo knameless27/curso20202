@@ -22,7 +22,7 @@ public class ejercicio2 {
         int cr = 3000;
         Scanner num = new Scanner(System.in);
         System.out.println("Digite el numero de paletas vendidas esta semana: ");
-        int venp = num.nextInt();
+        int venp = num.nextInt();//quiero llorar :c
         
     }
 }
