@@ -14,6 +14,38 @@ import java.util.Scanner;
 public class ejercicio6 {
 
     public static void main(String[] args) {
-        
+        Scanner rep = new Scanner(System.in);
+        Scanner nom = new Scanner(System.in);
+        Scanner ven = new Scanner(System.in);
+        System.out.println("Digite cuantos repartidores hay: ");
+        int repar = rep.nextInt();
+        String[] repart = new String[1000];
+        int[] vents = new int[1000];
+        int i;
+        for (i = 1; i <= repar; i++) {
+            System.out.println("Digite el nombre del repartidor #" + i);
+            String name = nom.nextLine();
+            repart[i] = name;
+            System.out.println("Digite el valor total de la venta de " + name + ": ");
+            int sale = ven.nextInt();
+            vents[i] = sale;
+        }
+        int mayor, menor;
+        String maname, meven;
+        maname = meven = repart[1];
+        mayor = menor = vents[1];
+        for (i = 1; i <= repar; i++) {
+            if (vents[i] > mayor) {
+                mayor = vents[i];
+                maname = repart[i];
+            }
+            if (vents[i] < menor) {
+                menor = vents[i];
+                meven = repart[i];
+            }
+
+        }
+        System.out.println("El repartidor con mayor monto fue " + maname + " y su monto fue de " + mayor);
+        System.out.println("El repartidor con menor monto fue " + meven + " y su monto fue de " + menor);
     }
 }
